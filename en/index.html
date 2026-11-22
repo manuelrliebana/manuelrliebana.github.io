@@ -4,9 +4,9 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Manuel R. Liébana</title>
-  <meta name="description" content="Manuel Rafael Liébana Cruz, final-year Computer Engineering student at the University of Jaén, Spain. Backend, mobile apps and automation.">
+  <meta name="description" content="Manuel Rafael Liébana Cruz, final-year Computer Engineering student at the University of Jaén, Spain. Backend, mobile apps and networking.">
   <meta property="og:title" content="Manuel R. Liébana">
-  <meta property="og:description" content="Final-year Computer Engineering student at the University of Jaén, Spain.">
+  <meta property="og:description" content="Final-year Computer Engineering student at the University of Jaén, Spain. Backend, mobile apps and networking.">
   <meta property="og:type" content="website">
   <meta name="twitter:card" content="summary_large_image">
   <meta property="og:url" content="https://manuelrliebana.github.io/en/">
@@ -18,167 +18,157 @@
   <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
   <link rel="apple-touch-icon" href="../assets/apple-touch-icon.png">
   <link rel="manifest" href="../manifest.webmanifest">
-  <meta name="theme-color" content="#faf8f4" media="(prefers-color-scheme: light)">
-  <meta name="theme-color" content="#141413" media="(prefers-color-scheme: dark)">
+  <meta name="theme-color" content="#2c3a2a">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600..800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="../assets/style.css">
 </head>
 <body>
-<div class="wrap">
+<a class="salto" href="#contenido">Skip to content</a>
 
-  <nav class="top">
-    <a class="logo" href="../en/" aria-label="Home">
-      <picture>
-        <source srcset="../assets/logo-oscuro.svg" media="(prefers-color-scheme: dark)">
-        <img src="../assets/logo-claro.svg" alt="liebana" width="657" height="185">
-      </picture>
-    </a>
-    <a href="../" lang="es" hreflang="es">Español</a>
+<header class="oscuro">
+  <nav class="nav ancho" aria-label="Main">
+    <a class="logo" href="./" aria-label="Home"><img src="../assets/logo-oscuro.svg" alt="liebana" width="657" height="185"></a>
+    <ul>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#education">Education</a></li>
+      <li><a href="../cv/CV_ManuelLiebana_EN.pdf">CV</a></li>
+      <li><a href="../" lang="es" hreflang="es">Español</a></li>
+    </ul>
   </nav>
 
-  <header class="intro">
+  <div class="hero ancho">
     <div>
-      <h1>Manuel R. Liébana</h1>
-      <p class="sub">Computer Engineering · University of Jaén, Spain</p>
+      <h1><span>Manuel R.</span><span>Liébana</span></h1>
+      <p class="lead">
+        I'm in my final year of Computer Engineering at the University of Jaén, Spain.
+        I enjoy backend work, mobile apps and figuring out why a network is slow.
+        I graduate in July 2027 and I'm looking for my first developer role, in Spain or abroad.
+      </p>
+      <div class="acciones">
+        <a class="boton" href="mailto:manuelrliebana@gmail.com">Email me</a>
+        <a href="../cv/CV_ManuelLiebana_EN.pdf">Download CV</a>
+        <a href="https://github.com/manuelrliebana">GitHub</a>
+        <a href="https://www.linkedin.com/in/manuelrliebana">LinkedIn</a>
+      </div>
     </div>
-    <img class="foto" src="../assets/foto.jpg" alt="Photo of Manuel" width="860" height="900">
-  </header>
+    <div class="rombo-foto"><img src="../assets/foto.jpg" alt="Photo of Manuel" width="860" height="900"></div>
+  </div>
+</header>
 
-  <p class="lead">
-    I'm in my final year of Computer Engineering, on the Information Technology track.
-    What I enjoy most is backend work, mobile apps and automating anything that gets repetitive,
-    and I'm comfortable with networking too. I've spent a semester studying in Sweden and another
-    in Portugal. I graduate in July 2027 and I'm looking for my first role as a developer, remote
-    or on-site, and open to relocating within Spain or abroad.
-  </p>
+<main id="contenido" class="ancho">
 
-  <ul class="links">
-    <li><a href="../cv/CV_ManuelLiebana_EN.pdf">CV (PDF)</a></li>
-    <li><a href="mailto:manuelrliebana@gmail.com">manuelrliebana@gmail.com</a></li>
-    <li><a href="https://github.com/manuelrliebana">GitHub</a></li>
-    <li><a href="https://www.linkedin.com/in/manuelrliebana">LinkedIn</a></li>
-  </ul>
+  <section id="projects" aria-labelledby="t-proyectos">
+    <h2 class="titulo-seccion" id="t-proyectos">Projects</h2>
+    <ul class="proyectos">
 
-  <main>
-
-    <section id="projects">
-      <h2>Projects</h2>
-
-      <article class="item">
-        <div class="item-head">
-          <h3>Management system for music ensembles <span class="estado">in progress</span></h3>
-          <span class="when">2026–27</span>
+      <li class="proyecto">
+        <div>
+          <h3><a href="projects/ptp-link/">Non-line-of-sight wireless link</a></h3>
+          <p class="dato"><strong>Up to 4× faster</strong> after measuring and changing channel</p>
         </div>
-        <p class="where">Final-year project · University of Jaén</p>
-        <p>
-          A platform for running bands, choirs and orchestras, built from scratch. I play in a band
-          and in a choir and orchestra myself, so I know the problem from the inside. I'll publish
-          the code and progress as the project moves forward.
-        </p>
-        <p class="stack">Python · FastAPI · PostgreSQL · Flutter</p>
-      </article>
-
-      <article class="item">
-        <div class="item-head">
-          <h3>Non-line-of-sight point-to-point wireless link</h3>
-          <span class="when">2026</span>
+        <div>
+          <p>Two Ubiquiti antennas bring Internet to a house 60 m away that can't be seen from the other one. I brought it back after a failure, measured the network point by point to find the bottleneck and tuned it with data.</p>
+          <ul class="etiquetas"><li>Wireless networking</li><li>Ubiquiti airOS</li><li>Troubleshooting</li></ul>
+          <a class="ver" href="projects/ptp-link/">See the project</a>
         </div>
-        <p class="where">Personal project</p>
-        <p>
-          A 2.4 GHz wireless link with two Ubiquiti antennas that brings Internet to a house about
-          60 m away, with no line of sight between them. I recovered and reconfigured it from scratch
-          after a failure, then measured the network point by point to find the bottleneck. A
-          data-driven channel change made the link up to four times faster.
-          <a href="https://github.com/manuelrliebana/enlace-ptp">Read the write-up</a> (in Spanish).
-        </p>
-        <p class="stack">Wireless networking · Ubiquiti airOS · Spectrum analysis · Network troubleshooting</p>
-      </article>
+      </li>
 
-      <article class="item">
-        <div class="item-head">
-          <h3>This website</h3>
-          <span class="when">2026</span>
+      <li class="proyecto">
+        <div>
+          <h3><a href="projects/tfg/">Management platform for music ensembles</a></h3>
+          <p class="dato"><span class="estado">In progress, final-year project</span></p>
         </div>
-        <p>
-          Hand-written HTML and CSS, no frameworks and no JavaScript. My CV lives in the same
-          repository: I write it in <a href="https://typst.app">Typst</a>, and a single source file
-          produces both the Spanish and English versions.
-          <a href="https://github.com/manuelrliebana/manuelrliebana.github.io">See the code</a>.
-        </p>
-        <p class="stack">HTML · CSS · Typst · GitHub Actions · GitHub Pages</p>
-      </article>
-    </section>
-
-    <section id="education">
-      <h2>Education</h2>
-
-      <div class="item">
-        <div class="item-head">
-          <h3>BSc in Computer Engineering</h3>
-          <span class="when">expected Jul 2027</span>
+        <div>
+          <p>A platform for running bands, choirs and orchestras, built from scratch. I play the clarinet in a band and in a choir and orchestra, so I know the problem from the inside.</p>
+          <ul class="etiquetas"><li>Python</li><li>FastAPI</li><li>PostgreSQL</li><li>Flutter</li></ul>
+          <a class="ver" href="projects/tfg/">See the project</a>
         </div>
-        <p class="where">University of Jaén · Information Technology</p>
-        <p>Favourite courses: Networks and Quality of Service, Artificial Intelligence, Metaheuristics and Multi-Agent Systems.</p>
+      </li>
+
+      <li class="proyecto">
+        <div>
+          <h3><a href="projects/this-website/">This website and my CV</a></h3>
+          <p class="dato"><strong>One source file</strong> builds my CV in two languages</p>
+        </div>
+        <div>
+          <p>Hand-written HTML and CSS with my own personal brand. The CV lives in the same repository, written in Typst, and a GitHub Action checks that it builds every time I change it.</p>
+          <ul class="etiquetas"><li>HTML</li><li>CSS</li><li>Typst</li><li>GitHub Actions</li></ul>
+          <a class="ver" href="projects/this-website/">See the project</a>
+        </div>
+      </li>
+
+    </ul>
+  </section>
+
+  <section id="education" aria-labelledby="t-formacion">
+    <h2 class="titulo-seccion" id="t-formacion">Education</h2>
+    <ol class="linea-tiempo">
+      <li>
+        <span class="anio">2019</span>
+        <div>
+          <h3>Start Computer Engineering at the University of Jaén</h3>
+          <p>Information Technology track. Favourite courses: Networks and Quality of Service, Artificial Intelligence, Metaheuristics and Multi-Agent Systems.</p>
+        </div>
+      </li>
+      <li>
+        <span class="anio">2021</span>
+        <div>
+          <h3>Erasmus+ at Jönköping University, Sweden</h3>
+          <p>August to December. Classes and everyday life in English.</p>
+        </div>
+      </li>
+      <li>
+        <span class="anio">2025</span>
+        <div>
+          <h3>Erasmus+ at the University of Aveiro, Portugal</h3>
+          <p>February to July. Coursework and assignments in English.</p>
+        </div>
+      </li>
+      <li class="ahora">
+        <span class="anio">2027</span>
+        <div>
+          <h3>Graduation</h3>
+          <p>Expected in July, with my final-year project on a platform for music ensembles.</p>
+        </div>
+      </li>
+    </ol>
+  </section>
+
+  <section aria-label="Skills and life outside code">
+    <div class="doble">
+      <div>
+        <h2 class="titulo-seccion">What I work with</h2>
+        <dl class="habilidades">
+          <dt>Languages</dt><dd>Python, Java, C/C++, Dart, SQL</dd>
+          <dt>Frameworks</dt><dd>FastAPI, Flutter</dd>
+          <dt>Databases</dt><dd>PostgreSQL</dd>
+          <dt>Tools</dt><dd>Git, Docker, Linux</dd>
+          <dt>Networking</dt><dd>TCP/IP, quality of service, wireless networks</dd>
+          <dt>Spoken</dt><dd>Spanish (native), English B2 (Cambridge First)</dd>
+        </dl>
       </div>
-
-      <div class="item">
-        <div class="item-head">
-          <h3>Erasmus+ at the University of Aveiro</h3>
-          <span class="when">Feb–Jul 2025</span>
-        </div>
-        <p class="where">Aveiro, Portugal</p>
-        <p>Coursework and assignments in English.</p>
+      <div>
+        <h2 class="titulo-seccion">Outside of code</h2>
+        <p>I play the clarinet in my town's municipal band and in the Diocesan Choir and Orchestra of Jaén, with weekly rehearsals and performances all year round.</p>
+        <p>I'm vice president of a non-profit association in my town: I've handled its administration since it was founded and coordinate volunteers at its events.</p>
       </div>
+    </div>
+  </section>
 
-      <div class="item">
-        <div class="item-head">
-          <h3>Erasmus+ at Jönköping University</h3>
-          <span class="when">Aug–Dec 2021</span>
-        </div>
-        <p class="where">Jönköping, Sweden</p>
-        <p>Classes and everyday life in English.</p>
-      </div>
-    </section>
+</main>
 
-    <section id="skills">
-      <h2>Skills</h2>
-      <dl>
-        <dt>Languages</dt>
-        <dd>Python, Java, C/C++, Dart, SQL</dd>
-        <dt>Frameworks</dt>
-        <dd>FastAPI, Flutter</dd>
-        <dt>Databases</dt>
-        <dd>PostgreSQL</dd>
-        <dt>Tools</dt>
-        <dd>Git, Docker, Linux</dd>
-        <dt>Networking</dt>
-        <dd>TCP/IP, quality of service (QoS), wireless networks</dd>
-        <dt>Spoken</dt>
-        <dd>Spanish (native) · English B2 (Cambridge First)</dd>
-      </dl>
-    </section>
-
-    <section id="outside">
-      <h2>Outside of code</h2>
-      <p>
-        I play the clarinet in my town's municipal band and in the Diocesan Choir and Orchestra of Jaén,
-        with weekly rehearsals and performances throughout the year.
-      </p>
-      <p>
-        I'm vice president of a local non-profit association in my town. I've handled its
-        administration since it was founded and coordinate volunteers at its events.
-      </p>
-    </section>
-
-  </main>
-
-  <footer>
-    <p>Manuel Rafael Liébana Cruz · Jaén, Spain</p>
-    <p><a href="https://github.com/manuelrliebana/manuelrliebana.github.io">Source code</a></p>
-  </footer>
-
-</div>
+<footer class="pie">
+  <div class="ancho">
+    <h2>Have a role or a project I could fit into?</h2>
+    <ul>
+      <li><a href="mailto:manuelrliebana@gmail.com">manuelrliebana@gmail.com</a></li>
+      <li><a href="https://www.linkedin.com/in/manuelrliebana">LinkedIn</a></li>
+      <li><a href="https://github.com/manuelrliebana">GitHub</a></li>
+    </ul>
+    <p class="firma">Manuel Rafael Liébana Cruz, Jaén, Spain. <a href="https://github.com/manuelrliebana/manuelrliebana.github.io">Source code of this site</a>.</p>
+  </div>
+</footer>
 </body>
 </html>

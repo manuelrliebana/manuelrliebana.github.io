@@ -4,9 +4,9 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Manuel R. Liébana</title>
-  <meta name="description" content="Manuel Rafael Liébana Cruz, estudiante de último curso de Ingeniería Informática en la Universidad de Jaén. Backend, apps móviles y automatización.">
+  <meta name="description" content="Manuel Rafael Liébana Cruz, estudiante de último curso de Ingeniería Informática en la Universidad de Jaén. Backend, apps móviles y redes.">
   <meta property="og:title" content="Manuel R. Liébana">
-  <meta property="og:description" content="Estudiante de último curso de Ingeniería Informática en la Universidad de Jaén.">
+  <meta property="og:description" content="Estudiante de último curso de Ingeniería Informática en la Universidad de Jaén. Backend, apps móviles y redes.">
   <meta property="og:type" content="website">
   <meta name="twitter:card" content="summary_large_image">
   <meta property="og:url" content="https://manuelrliebana.github.io/">
@@ -18,167 +18,157 @@
   <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
   <link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
   <link rel="manifest" href="manifest.webmanifest">
-  <meta name="theme-color" content="#faf8f4" media="(prefers-color-scheme: light)">
-  <meta name="theme-color" content="#141413" media="(prefers-color-scheme: dark)">
+  <meta name="theme-color" content="#2c3a2a">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600..800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="assets/style.css">
 </head>
 <body>
-<div class="wrap">
+<a class="salto" href="#contenido">Ir al contenido</a>
 
-  <nav class="top">
-    <a class="logo" href="./" aria-label="Inicio">
-      <picture>
-        <source srcset="assets/logo-oscuro.svg" media="(prefers-color-scheme: dark)">
-        <img src="assets/logo-claro.svg" alt="liebana" width="657" height="185">
-      </picture>
-    </a>
-    <a href="en/" lang="en" hreflang="en">English</a>
+<header class="oscuro">
+  <nav class="nav ancho" aria-label="Principal">
+    <a class="logo" href="./" aria-label="Inicio"><img src="assets/logo-oscuro.svg" alt="liebana" width="657" height="185"></a>
+    <ul>
+      <li><a href="#proyectos">Proyectos</a></li>
+      <li><a href="#formacion">Formación</a></li>
+      <li><a href="cv/CV_ManuelLiebana_ES.pdf">CV</a></li>
+      <li><a href="en/" lang="en" hreflang="en">English</a></li>
+    </ul>
   </nav>
 
-  <header class="intro">
+  <div class="hero ancho">
     <div>
-      <h1>Manuel R. Liébana</h1>
-      <p class="sub">Ingeniería Informática · Universidad de Jaén</p>
+      <h1><span>Manuel R.</span><span>Liébana</span></h1>
+      <p class="lead">
+        Estudio el último curso de Ingeniería Informática en la Universidad de Jaén.
+        Me gusta el backend, las apps móviles y entender por qué una red va lenta.
+        Termino en julio de 2027 y busco mi primer puesto como desarrollador, en España o fuera.
+      </p>
+      <div class="acciones">
+        <a class="boton" href="mailto:manuelrliebana@gmail.com">Escríbeme</a>
+        <a href="cv/CV_ManuelLiebana_ES.pdf">Descargar CV</a>
+        <a href="https://github.com/manuelrliebana">GitHub</a>
+        <a href="https://www.linkedin.com/in/manuelrliebana">LinkedIn</a>
+      </div>
     </div>
-    <img class="foto" src="assets/foto.jpg" alt="Foto de Manuel" width="860" height="900">
-  </header>
+    <div class="rombo-foto"><img src="assets/foto.jpg" alt="Foto de Manuel" width="860" height="900"></div>
+  </div>
+</header>
 
-  <p class="lead">
-    Estoy en el último curso de Ingeniería Informática, en la rama de Tecnologías de la Información.
-    Lo que más me gusta es la parte de backend, las apps móviles y automatizar todo lo que se repite,
-    y también me defiendo con las redes. He estudiado un cuatrimestre en Suecia y otro en Portugal.
-    Termino en julio de 2027 y busco mi primer puesto como desarrollador, en remoto o cambiándome
-    de ciudad, en España o fuera.
-  </p>
+<main id="contenido" class="ancho">
 
-  <ul class="links">
-    <li><a href="cv/CV_ManuelLiebana_ES.pdf">CV (PDF)</a></li>
-    <li><a href="mailto:manuelrliebana@gmail.com">manuelrliebana@gmail.com</a></li>
-    <li><a href="https://github.com/manuelrliebana">GitHub</a></li>
-    <li><a href="https://www.linkedin.com/in/manuelrliebana">LinkedIn</a></li>
-  </ul>
+  <section id="proyectos" aria-labelledby="t-proyectos">
+    <h2 class="titulo-seccion" id="t-proyectos">Proyectos</h2>
+    <ul class="proyectos">
 
-  <main>
-
-    <section id="proyectos">
-      <h2>Proyectos</h2>
-
-      <article class="item">
-        <div class="item-head">
-          <h3>Sistema de gestión para agrupaciones musicales <span class="estado">en desarrollo</span></h3>
-          <span class="when">2026–27</span>
+      <li class="proyecto">
+        <div>
+          <h3><a href="proyectos/enlace-ptp/">Radioenlace sin visión directa</a></h3>
+          <p class="dato"><strong>Hasta 4 veces más rápido</strong> tras medir y cambiar de canal</p>
         </div>
-        <p class="where">Trabajo Fin de Grado · Universidad de Jaén</p>
-        <p>
-          Una plataforma para gestionar bandas, coros y orquestas, hecha desde cero. Toco en una banda
-          y en un coro y orquesta, así que conozco bien el problema desde dentro. Iré publicando el
-          código y los avances conforme lo desarrolle.
-        </p>
-        <p class="stack">Python · FastAPI · PostgreSQL · Flutter</p>
-      </article>
-
-      <article class="item">
-        <div class="item-head">
-          <h3>Radioenlace punto a punto sin visión directa</h3>
-          <span class="when">2026</span>
+        <div>
+          <p>Dos antenas Ubiquiti llevan Internet a una casa a 60 m que no se ve desde la otra. Lo recuperé tras una avería, medí la red punto por punto para encontrar el cuello de botella y lo optimicé con datos.</p>
+          <ul class="etiquetas"><li>Redes inalámbricas</li><li>Ubiquiti airOS</li><li>Diagnóstico</li></ul>
+          <a class="ver" href="proyectos/enlace-ptp/">Ver el proyecto</a>
         </div>
-        <p class="where">Proyecto personal</p>
-        <p>
-          Un enlace wifi de 2,4 GHz con dos antenas Ubiquiti que lleva Internet a una casa a unos 60 m,
-          sin visión directa entre ellas. Lo recuperé y reconfiguré desde cero tras una avería. Después
-          medí la red punto por punto para encontrar el cuello de botella y, con un cambio de canal
-          probado con datos, el rendimiento del enlace se multiplicó hasta por cuatro.
-          <a href="https://github.com/manuelrliebana/enlace-ptp">Ver la documentación</a>.
-        </p>
-        <p class="stack">Redes inalámbricas · Ubiquiti airOS · Análisis de espectro · Diagnóstico de red</p>
-      </article>
+      </li>
 
-      <article class="item">
-        <div class="item-head">
-          <h3>Esta web</h3>
-          <span class="when">2026</span>
+      <li class="proyecto">
+        <div>
+          <h3><a href="proyectos/tfg/">Gestión de agrupaciones musicales</a></h3>
+          <p class="dato"><span class="estado">En desarrollo, Trabajo Fin de Grado</span></p>
         </div>
-        <p>
-          HTML y CSS escritos a mano, sin frameworks y sin JavaScript. Mi CV está en el mismo
-          repositorio: lo escribo en <a href="https://typst.app">Typst</a> y genera la versión
-          en español y en inglés desde un único archivo.
-          <a href="https://github.com/manuelrliebana/manuelrliebana.github.io">Ver el código</a>.
-        </p>
-        <p class="stack">HTML · CSS · Typst · GitHub Actions · GitHub Pages</p>
-      </article>
-    </section>
-
-    <section id="formacion">
-      <h2>Formación</h2>
-
-      <div class="item">
-        <div class="item-head">
-          <h3>Grado en Ingeniería Informática</h3>
-          <span class="when">fin previsto jul. 2027</span>
+        <div>
+          <p>Una plataforma para llevar bandas, coros y orquestas, hecha desde cero. Toco el clarinete en una banda y en un coro y orquesta, así que conozco el problema desde dentro.</p>
+          <ul class="etiquetas"><li>Python</li><li>FastAPI</li><li>PostgreSQL</li><li>Flutter</li></ul>
+          <a class="ver" href="proyectos/tfg/">Ver el proyecto</a>
         </div>
-        <p class="where">Universidad de Jaén · Tecnologías de la Información</p>
-        <p>Asignaturas que más me han gustado: Redes y Calidad de Servicio, Inteligencia Artificial, Metaheurísticas y Sistemas Multiagente.</p>
+      </li>
+
+      <li class="proyecto">
+        <div>
+          <h3><a href="proyectos/esta-web/">Esta web y mi CV</a></h3>
+          <p class="dato"><strong>Un solo archivo</strong> genera el CV en dos idiomas</p>
+        </div>
+        <div>
+          <p>HTML y CSS escritos a mano, con mi propia marca. El CV está en el mismo repositorio, escrito en Typst, y una GitHub Action comprueba que compila cada vez que lo cambio.</p>
+          <ul class="etiquetas"><li>HTML</li><li>CSS</li><li>Typst</li><li>GitHub Actions</li></ul>
+          <a class="ver" href="proyectos/esta-web/">Ver el proyecto</a>
+        </div>
+      </li>
+
+    </ul>
+  </section>
+
+  <section id="formacion" aria-labelledby="t-formacion">
+    <h2 class="titulo-seccion" id="t-formacion">Formación</h2>
+    <ol class="linea-tiempo">
+      <li>
+        <span class="anio">2019</span>
+        <div>
+          <h3>Empiezo Ingeniería Informática en la Universidad de Jaén</h3>
+          <p>Rama de Tecnologías de la Información. Las asignaturas que más me han gustado: Redes y Calidad de Servicio, Inteligencia Artificial, Metaheurísticas y Sistemas Multiagente.</p>
+        </div>
+      </li>
+      <li>
+        <span class="anio">2021</span>
+        <div>
+          <h3>Erasmus+ en Jönköping University, Suecia</h3>
+          <p>De agosto a diciembre. Clases y día a día en inglés.</p>
+        </div>
+      </li>
+      <li>
+        <span class="anio">2025</span>
+        <div>
+          <h3>Erasmus+ en la Universidade de Aveiro, Portugal</h3>
+          <p>De febrero a julio. Asignaturas y trabajos en inglés.</p>
+        </div>
+      </li>
+      <li class="ahora">
+        <span class="anio">2027</span>
+        <div>
+          <h3>Termino el grado</h3>
+          <p>Fin previsto en julio, con el Trabajo Fin de Grado sobre gestión de agrupaciones musicales.</p>
+        </div>
+      </li>
+    </ol>
+  </section>
+
+  <section aria-label="Habilidades y fuera del código">
+    <div class="doble">
+      <div>
+        <h2 class="titulo-seccion">Con qué trabajo</h2>
+        <dl class="habilidades">
+          <dt>Lenguajes</dt><dd>Python, Java, C/C++, Dart, SQL</dd>
+          <dt>Frameworks</dt><dd>FastAPI, Flutter</dd>
+          <dt>Bases de datos</dt><dd>PostgreSQL</dd>
+          <dt>Herramientas</dt><dd>Git, Docker, Linux</dd>
+          <dt>Redes</dt><dd>TCP/IP, calidad de servicio, redes inalámbricas</dd>
+          <dt>Idiomas</dt><dd>Español nativo, inglés B2 (Cambridge First)</dd>
+        </dl>
       </div>
-
-      <div class="item">
-        <div class="item-head">
-          <h3>Erasmus+ en la Universidade de Aveiro</h3>
-          <span class="when">feb.–jul. 2025</span>
-        </div>
-        <p class="where">Aveiro, Portugal</p>
-        <p>Asignaturas y trabajos en inglés.</p>
+      <div>
+        <h2 class="titulo-seccion">Fuera del código</h2>
+        <p>Toco el clarinete en la Banda Municipal de Jamilena y en el Coro y Orquesta Diocesanos de Jaén. Ensayamos cada semana y actuamos durante todo el año.</p>
+        <p>Soy vicepresidente de una asociación sin ánimo de lucro de mi pueblo: llevo la parte administrativa desde su fundación y coordino a los voluntarios en los eventos.</p>
       </div>
+    </div>
+  </section>
 
-      <div class="item">
-        <div class="item-head">
-          <h3>Erasmus+ en Jönköping University</h3>
-          <span class="when">ago.–dic. 2021</span>
-        </div>
-        <p class="where">Jönköping, Suecia</p>
-        <p>Clases y día a día en inglés.</p>
-      </div>
-    </section>
+</main>
 
-    <section id="habilidades">
-      <h2>Habilidades</h2>
-      <dl>
-        <dt>Lenguajes</dt>
-        <dd>Python, Java, C/C++, Dart, SQL</dd>
-        <dt>Frameworks</dt>
-        <dd>FastAPI, Flutter</dd>
-        <dt>Bases de datos</dt>
-        <dd>PostgreSQL</dd>
-        <dt>Herramientas</dt>
-        <dd>Git, Docker, Linux</dd>
-        <dt>Redes</dt>
-        <dd>TCP/IP, calidad de servicio (QoS), redes inalámbricas</dd>
-        <dt>Idiomas</dt>
-        <dd>Español nativo · Inglés B2 (Cambridge First)</dd>
-      </dl>
-    </section>
-
-    <section id="fuera">
-      <h2>Fuera del código</h2>
-      <p>
-        Toco el clarinete en la Banda Municipal de Jamilena y en el Coro y Orquesta Diocesanos de Jaén.
-        Ensayamos cada semana y actuamos durante todo el año.
-      </p>
-      <p>
-        Soy vicepresidente de una asociación sin ánimo de lucro de mi pueblo: llevo la parte
-        administrativa desde su fundación y coordino a los voluntarios en los eventos.
-      </p>
-    </section>
-
-  </main>
-
-  <footer>
-    <p>Manuel Rafael Liébana Cruz · Jaén</p>
-    <p><a href="https://github.com/manuelrliebana/manuelrliebana.github.io">Código de esta web</a></p>
-  </footer>
-
-</div>
+<footer class="pie">
+  <div class="ancho">
+    <h2>¿Tienes un puesto o un proyecto en el que encaje?</h2>
+    <ul>
+      <li><a href="mailto:manuelrliebana@gmail.com">manuelrliebana@gmail.com</a></li>
+      <li><a href="https://www.linkedin.com/in/manuelrliebana">LinkedIn</a></li>
+      <li><a href="https://github.com/manuelrliebana">GitHub</a></li>
+    </ul>
+    <p class="firma">Manuel Rafael Liébana Cruz, Jaén. <a href="https://github.com/manuelrliebana/manuelrliebana.github.io">Código de esta web</a>.</p>
+  </div>
+</footer>
 </body>
 </html>

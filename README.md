@@ -5,10 +5,11 @@ Se publica con GitHub Pages en **https://manuelrliebana.github.io**.
 
 ## Cómo está hecha
 
-- **HTML y CSS a mano**, sin frameworks ni JavaScript. Es una página de contenido y no necesita más.
+- **HTML y CSS a mano**, sin frameworks. El único JavaScript (`assets/grafica.js`) es la gráfica del radioenlace, y la página funciona sin él.
+- **Una página por proyecto** en `proyectos/` (y en `en/projects/` en inglés).
 - **Dos idiomas** con páginas estáticas: español en `/` e inglés en `/en/`.
 - **Modo oscuro** automático según el sistema (`prefers-color-scheme`).
-- **Marca personal:** logotipo "liebana" (versión clara u oscura según el modo), favicon e imagen para compartir de mi paquete de marca. Bricolage Grotesque para los títulos, Inter para el texto y el ámbar (`#C98A2E` / `#E8A33D`) solo en el rombo y en detalles.
+- **Marca personal:** logotipo "liebana", favicon e imagen para compartir de mi paquete de marca. Bricolage Grotesque para los títulos, Inter para el texto y el ámbar (`#C98A2E` / `#E8A33D`) solo en el rombo y en detalles. Colores de Jamilena: verde de olivar y blanco de cal.
 
 ## El CV
 
@@ -24,9 +25,10 @@ Cada vez que cambia algo en `cv/`, una GitHub Action ([`.github/workflows/cv.yml
 ## Estructura
 
 ```
-index.html          página en español
-en/index.html       página en inglés
-assets/             estilos, logotipo, iconos, imagen para compartir y foto
+index.html          portada en español
+proyectos/          páginas de cada proyecto en español
+en/                 portada y proyectos en inglés
+assets/             estilos, gráfica, logotipo, iconos, imagen para compartir y foto
 cv/                 CV en Typst, fuentes y PDF generados
 .github/workflows/  compilación del CV
 ```

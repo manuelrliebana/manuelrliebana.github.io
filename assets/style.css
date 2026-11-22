@@ -1,49 +1,56 @@
-/* Estilos de manuelrliebana.github.io
-   Una sola hoja, sin frameworks. Colores y tipografías de mi marca:
-   Bricolage Grotesque para títulos, Inter para el texto y el ámbar
-   solo en el rombo del logo y en detalles (nunca en las letras). */
+/* manuelrliebana.github.io
+   Una sola hoja, sin frameworks.
+   Marca: Bricolage Grotesque para títulos, Inter para el texto.
+   El ámbar solo aparece en el rombo y en detalles, nunca en las letras.
+   Paleta inspirada en Jamilena: verde de olivar, blanco de cal y piedra. */
 
 :root {
-  --bg: #faf8f4;
-  --text: #1c1c1e;
-  --muted: #62605b;
-  --line: #e4e0d8;
+  --cal: #f3f4ef;        /* fondo claro: blanco de cal, frío, no crema */
+  --papel: #ffffff;
+  --tinta: #1a1e19;
+  --piedra: #63695f;     /* texto secundario */
+  --linea: #d9dcd2;
+  --olivo: #2c3a2a;      /* bloques oscuros */
+  --olivo-2: #3a4a37;
+  --hoja: #b5bfa6;       /* texto secundario sobre olivo */
   --ambar: #c98a2e;
-  --max: 42rem;
+  --ambar-claro: #e8a33d;
+  --max: 68rem;
+  --texto: 38rem;
+  --radio: 6px;
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --bg: #141413;
-    --text: #ecebe8;
-    --muted: #a19e97;
-    --line: #2c2b29;
+    --cal: #151913;
+    --papel: #1c2119;
+    --tinta: #e9ebe4;
+    --piedra: #a2a99a;
+    --linea: #2d3429;
+    --olivo: #222c20;
+    --olivo-2: #2e3a2b;
+    --hoja: #a9b59a;
     --ambar: #e8a33d;
   }
 }
 
-*,
-*::before,
-*::after {
-  box-sizing: border-box;
-}
+*, *::before, *::after { box-sizing: border-box; }
 
-html {
-  -webkit-text-size-adjust: 100%;
+html { -webkit-text-size-adjust: 100%; scroll-behavior: smooth; }
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after { transition: none !important; animation: none !important; }
 }
 
 body {
   margin: 0;
-  background: var(--bg);
-  color: var(--text);
-  font: 400 1rem/1.65 "Inter", system-ui, sans-serif;
+  background: var(--cal);
+  color: var(--tinta);
+  font: 400 1.0625rem/1.65 "Inter", system-ui, sans-serif;
 }
 
-.wrap {
-  max-width: var(--max);
-  margin: 0 auto;
-  padding: 2rem 1.25rem 3rem;
-}
+img { max-width: 100%; display: block; }
 
 a {
   color: inherit;
@@ -52,221 +59,364 @@ a {
   text-decoration-thickness: 1.5px;
   text-underline-offset: 3px;
 }
+a:hover { text-decoration-thickness: 3px; }
 
-a:hover {
-  text-decoration-thickness: 2.5px;
+:focus-visible {
+  outline: 2px solid var(--ambar);
+  outline-offset: 3px;
+  border-radius: 2px;
 }
 
-h1,
-h2,
-h3 {
+h1, h2, h3 {
   font-family: "Bricolage Grotesque", "Inter", sans-serif;
-  line-height: 1.15;
-  margin: 0;
-}
-
-/* Barra superior */
-.top {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  font-size: 0.9rem;
-  color: var(--muted);
-  margin-bottom: 3rem;
-}
-
-.top a {
-  text-decoration: none;
-}
-
-.top a:hover {
-  color: var(--text);
-}
-
-/* Logotipo "liebana" (archivos de mi paquete de marca) */
-.logo {
-  display: block;
-  line-height: 0;
-}
-
-.logo img {
-  height: 1.6rem;
-  width: auto;
-}
-
-/* Cabecera */
-.intro {
-  display: grid;
-  grid-template-columns: 1fr auto;
-  gap: 1.5rem;
-  align-items: start;
-}
-
-.intro h1 {
-  font-size: clamp(2rem, 6vw, 2.75rem);
   font-weight: 700;
-  letter-spacing: -0.01em;
-}
-
-.intro .sub {
-  margin: 0.5rem 0 0;
-  color: var(--muted);
-}
-
-.foto {
-  width: 6.5rem;
-  height: 6.5rem;
-  border-radius: 50%;
-  object-fit: cover;
-  object-position: 50% 20%;
-}
-
-.lead {
-  margin: 1.75rem 0 1.25rem;
-  font-size: 1.08rem;
-}
-
-.links {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.4rem 1.25rem;
-  padding: 0;
+  line-height: 1.08;
   margin: 0;
-  list-style: none;
-  font-size: 0.95rem;
+  letter-spacing: -0.015em;
 }
 
-/* Secciones */
-section {
-  margin-top: 3.25rem;
-}
+.ancho { max-width: var(--max); margin: 0 auto; padding: 0 1.5rem; }
 
-section > h2 {
-  font-size: 1.05rem;
-  font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: 0.06em;
+.salto {
+  position: absolute; left: -999px; top: 0;
+  background: var(--papel); padding: .5rem 1rem; z-index: 10;
+}
+.salto:focus { left: 1rem; top: 1rem; }
+
+/* ---------- Bloque oscuro (cabecera de todas las páginas) ---------- */
+
+.oscuro {
+  background: var(--olivo);
+  color: #f1f3ec;
+}
+.oscuro a { text-decoration-color: var(--ambar-claro); }
+
+.nav {
   display: flex;
   align-items: center;
-  gap: 0.75rem;
-  margin-bottom: 1.25rem;
-}
-
-section > h2::after {
-  content: "";
-  flex: 1;
-  height: 1px;
-  background: var(--ambar);
-  opacity: 0.6;
-}
-
-section p {
-  margin: 0 0 1rem;
-}
-
-/* Entradas tipo CV: título, lugar y fecha */
-.item {
-  margin-bottom: 1.6rem;
-}
-
-.item-head {
-  display: flex;
   justify-content: space-between;
   gap: 1rem;
-  flex-wrap: wrap;
+  padding-top: 1.5rem;
+  padding-bottom: 1.5rem;
+  font-size: .95rem;
+}
+.nav .logo { line-height: 0; }
+.nav .logo img { height: 1.75rem; width: auto; }
+.nav ul {
+  display: flex; flex-wrap: wrap; gap: .25rem 1.5rem;
+  list-style: none; margin: 0; padding: 0;
+}
+.nav ul a { text-decoration: none; color: var(--hoja); }
+.nav ul a:hover, .nav ul a[aria-current] { color: #fff; }
+.nav ul a[aria-current] {
+  text-decoration: underline;
+  text-decoration-color: var(--ambar-claro);
 }
 
-.item h3 {
-  font-family: "Inter", sans-serif;
+/* Portada */
+.hero {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: 3rem;
+  align-items: center;
+  padding-top: 3.5rem;
+  padding-bottom: 5rem;
+}
+.hero h1 {
+  font-size: clamp(3rem, 10vw, 7.25rem);
+  font-variation-settings: "opsz" 96;
+  letter-spacing: -0.035em;
+  line-height: .92;
+}
+.hero h1 span { display: block; }
+.hero .lead {
+  max-width: 34rem;
+  margin: 2rem 0 0;
+  font-size: 1.2rem;
+  line-height: 1.55;
+  color: #dfe4d6;
+}
+.hero .acciones {
+  display: flex; flex-wrap: wrap; gap: .75rem 1.5rem;
+  margin-top: 2rem;
   font-size: 1rem;
+}
+.boton {
+  display: inline-block;
+  padding: .7rem 1.25rem;
+  background: #f1f3ec;
+  color: var(--olivo);
+  border-radius: var(--radio);
   font-weight: 600;
-  line-height: 1.4;
+  text-decoration: none;
+}
+.boton:hover { background: #fff; }
+
+/* Foto recortada en el rombo inclinado de la marca */
+.rombo-foto {
+  --lado: clamp(11rem, 22vw, 17rem);
+  width: var(--lado);
+  height: var(--lado);
+  position: relative;
+  transform: rotate(45deg) rotate(10deg);
+  border-radius: 14px;
+  overflow: hidden;
+  outline: 3px solid var(--ambar-claro);
+  outline-offset: 10px;
+  margin: 2.5rem;
+}
+.rombo-foto img {
+  position: absolute;
+  inset: -22%;
+  width: 144%;
+  height: 144%;
+  max-width: none;
+  object-fit: cover;
+  object-position: 50% 18%;
+  transform: rotate(-55deg);
 }
 
-.when {
-  color: var(--muted);
-  font-size: 0.9rem;
-  white-space: nowrap;
+/* ---------- Secciones ---------- */
+
+main section { padding: 5rem 0 0; }
+
+.titulo-seccion {
+  font-size: clamp(2rem, 4.5vw, 3rem);
+  margin-bottom: 2.25rem;
 }
 
-.where {
-  color: var(--muted);
-  margin: 0.1rem 0 0.4rem;
+/* Proyectos en la portada: filas, no tarjetas iguales */
+.proyectos { list-style: none; margin: 0; padding: 0; border-top: 2px solid var(--tinta); }
+.proyecto {
+  display: grid;
+  grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr);
+  gap: 1rem 3rem;
+  padding: 2.25rem 0;
+  border-bottom: 1px solid var(--linea);
 }
+.proyecto h3 { font-size: clamp(1.6rem, 3vw, 2.2rem); }
+.proyecto h3 a { text-decoration: none; }
+.proyecto h3 a:hover { text-decoration: underline; text-decoration-color: var(--ambar); }
+.proyecto .dato {
+  margin: .9rem 0 0;
+  font-family: "Bricolage Grotesque", sans-serif;
+  font-size: 1.15rem;
+  color: var(--piedra);
+}
+.proyecto .dato strong { color: var(--tinta); font-weight: 700; }
+.proyecto p { margin: 0 0 1rem; max-width: var(--texto); }
+.ver { font-weight: 600; }
 
-.item p {
-  margin: 0.4rem 0 0;
+.etiquetas { display: flex; flex-wrap: wrap; gap: .4rem; list-style: none; margin: 0 0 1.1rem; padding: 0; }
+.etiquetas li {
+  font-size: .8rem;
+  padding: .15rem .6rem;
+  border-radius: 999px;
+  background: var(--papel);
+  border: 1px solid var(--linea);
+  color: var(--piedra);
 }
 
 .estado {
-  display: inline-block;
-  font-size: 0.78rem;
-  font-weight: 500;
-  border: 1px solid var(--ambar);
-  border-radius: 999px;
-  padding: 0.05rem 0.55rem;
-  margin-left: 0.4rem;
-  vertical-align: 0.1em;
-  white-space: nowrap;
+  display: inline-flex; align-items: center; gap: .45rem;
+  font-family: "Inter", sans-serif;
+  font-size: .85rem; font-weight: 500;
+  letter-spacing: 0;
+  color: var(--piedra);
+  vertical-align: middle;
+}
+.estado::before {
+  content: "";
+  width: .55rem; height: .55rem;
+  background: var(--ambar);
+  transform: rotate(55deg);
+  border-radius: 1px;
 }
 
-.stack {
-  color: var(--muted);
-  font-size: 0.9rem;
+/* Formación: es una secuencia, así que va como línea de tiempo */
+.linea-tiempo { list-style: none; margin: 0; padding: 0; position: relative; }
+.linea-tiempo::before {
+  content: ""; position: absolute; left: 5.5rem; top: .5rem; bottom: .5rem;
+  width: 2px; background: var(--linea);
 }
-
-/* Habilidades e idiomas */
-dl {
+.linea-tiempo li {
   display: grid;
-  grid-template-columns: max-content 1fr;
-  gap: 0.45rem 1.5rem;
-  margin: 0;
+  grid-template-columns: 5.5rem 1fr;
+  gap: 0 2rem;
+  padding-bottom: 2rem;
+  position: relative;
+}
+.linea-tiempo li::after {
+  content: ""; position: absolute; left: calc(5.5rem - .3rem); top: .5rem;
+  width: .7rem; height: .7rem; background: var(--cal);
+  border: 2px solid var(--piedra); transform: rotate(55deg); border-radius: 1px;
+}
+.linea-tiempo li.ahora::after { background: var(--ambar); border-color: var(--ambar); }
+.linea-tiempo .anio {
+  font-family: "Bricolage Grotesque", sans-serif;
+  font-weight: 700; font-size: 1.25rem; line-height: 1.5;
+}
+.linea-tiempo h3 { font-family: "Inter", sans-serif; font-size: 1.05rem; font-weight: 600; letter-spacing: 0; line-height: 1.5; padding-left: 1.75rem; }
+.linea-tiempo p { margin: .15rem 0 0; color: var(--piedra); padding-left: 1.75rem; max-width: var(--texto); }
+
+/* Dos columnas: habilidades y fuera del código */
+.doble {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+}
+.habilidades { display: grid; grid-template-columns: max-content 1fr; gap: .6rem 1.5rem; margin: 0; }
+.habilidades dt { font-weight: 600; }
+.habilidades dd { margin: 0; color: var(--piedra); }
+.doble p { margin: 0 0 1rem; max-width: var(--texto); }
+
+/* ---------- Pie ---------- */
+
+.pie {
+  margin-top: 6rem;
+  background: var(--olivo);
+  color: var(--hoja);
+  padding: 3.5rem 0;
+}
+.pie .ancho { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 2rem; align-items: end; }
+.pie h2 { color: #f1f3ec; font-size: clamp(1.8rem, 4vw, 2.6rem); max-width: 22ch; }
+.pie ul { list-style: none; margin: 0; padding: 0; display: grid; gap: .3rem; text-align: right; }
+.pie a { color: #f1f3ec; }
+.pie .firma { flex-basis: 100%; margin: 1.5rem 0 0; font-size: .85rem; }
+
+/* ---------- Páginas de proyecto ---------- */
+
+.cabecera-proyecto { padding-top: 3rem; padding-bottom: 4rem; }
+.cabecera-proyecto .volver { color: var(--hoja); font-size: .95rem; text-decoration: none; }
+.cabecera-proyecto .volver:hover { color: #fff; }
+.cabecera-proyecto h1 {
+  font-size: clamp(2.5rem, 7vw, 5rem);
+  letter-spacing: -0.03em;
+  max-width: 16ch;
+  margin-top: 1.5rem;
+}
+.cabecera-proyecto .lead {
+  max-width: 40rem; margin: 1.5rem 0 0; font-size: 1.2rem; line-height: 1.55; color: #dfe4d6;
+}
+.cifras {
+  display: flex; flex-wrap: wrap; gap: 1.5rem 3.5rem;
+  margin: 2.75rem 0 0; padding: 0; list-style: none;
+}
+.cifras li { display: grid; }
+.cifras strong {
+  font-family: "Bricolage Grotesque", sans-serif;
+  font-size: clamp(2rem, 4vw, 2.75rem); line-height: 1.1; color: #fff;
+}
+.cifras span { color: var(--hoja); font-size: .95rem; }
+
+.articulo {
+  display: grid;
+  grid-template-columns: 13rem minmax(0, 1fr);
+  gap: 3rem;
+  padding-top: 4rem;
+}
+.indice { position: sticky; top: 2rem; align-self: start; font-size: .92rem; }
+.indice h2 { font-family: "Inter", sans-serif; font-size: .92rem; font-weight: 600; letter-spacing: 0; margin-bottom: .6rem; }
+.indice ol { margin: 0; padding-left: 1.2rem; color: var(--piedra); display: grid; gap: .35rem; }
+.indice a { text-decoration: none; }
+.indice a:hover { text-decoration: underline; text-decoration-color: var(--ambar); }
+
+.cuerpo { max-width: 44rem; }
+.cuerpo section { padding: 0 0 3.5rem; }
+.cuerpo h2 { font-size: clamp(1.7rem, 3.2vw, 2.2rem); margin-bottom: 1rem; }
+.cuerpo h3 { font-size: 1.25rem; margin: 1.75rem 0 .5rem; }
+.cuerpo p, .cuerpo li { max-width: var(--texto); }
+.cuerpo p { margin: 0 0 1rem; }
+.cuerpo ul, .cuerpo ol { padding-left: 1.25rem; margin: 0 0 1rem; }
+.cuerpo li { margin-bottom: .4rem; }
+.cuerpo li::marker { color: var(--ambar); }
+
+.nota {
+  border-left: 3px solid var(--ambar);
+  padding: .25rem 0 .25rem 1rem;
+  color: var(--piedra);
+  font-size: .95rem;
 }
 
-dt {
-  font-weight: 600;
+.figura {
+  margin: 1.75rem 0;
+  background: var(--papel);
+  border: 1px solid var(--linea);
+  border-radius: var(--radio);
+  padding: 1.5rem;
+}
+.figura figcaption { color: var(--piedra); font-size: .9rem; margin-top: 1rem; }
+.figura svg { width: 100%; height: auto; display: block; color: var(--tinta); }
+
+table { width: 100%; border-collapse: collapse; font-size: .95rem; margin: 1.25rem 0; }
+th, td { text-align: left; padding: .6rem .75rem .6rem 0; border-bottom: 1px solid var(--linea); vertical-align: top; }
+th { font-weight: 600; }
+td.num, th.num { text-align: right; font-variant-numeric: tabular-nums; }
+.tabla { overflow-x: auto; }
+
+/* Gráfica antes/después: la única pieza con JavaScript */
+.grafica-controles { display: inline-flex; border: 1px solid var(--linea); border-radius: var(--radio); overflow: hidden; margin-bottom: 1.5rem; }
+.grafica-controles button {
+  font: inherit; font-size: .92rem; font-weight: 500;
+  border: 0; background: transparent; color: var(--piedra);
+  padding: .5rem 1rem; cursor: pointer;
+}
+.grafica-controles button[aria-pressed="true"] { background: var(--tinta); color: var(--cal); }
+
+.barras { display: grid; gap: 1.1rem; margin: 0; padding: 0; list-style: none; }
+.barra { display: grid; grid-template-columns: 11rem 1fr 6.5rem; gap: .9rem; align-items: center; }
+.barra .etq { font-size: .92rem; }
+.barra .pista { display: block; height: 1.6rem; background: var(--cal); border-radius: 3px; overflow: hidden; }
+.barra .relleno {
+  display: block;
+  height: 100%;
+  width: var(--v, 0%);
+  background: var(--olivo-2);
+  transition: width .6s cubic-bezier(.2, .7, .2, 1);
+}
+.grafica[data-canal="6"] .relleno { background: var(--ambar); }
+.barra .valor { white-space: nowrap; font-variant-numeric: tabular-nums; font-weight: 600; text-align: right; }
+
+@media (prefers-color-scheme: dark) {
+  .barra .relleno { background: var(--hoja); }
 }
 
-dd {
-  margin: 0;
+.siguiente {
+  display: flex; justify-content: space-between; flex-wrap: wrap; gap: 1rem;
+  border-top: 2px solid var(--tinta);
+  padding-top: 1.5rem; margin-top: 1rem;
+}
+.siguiente a { font-family: "Bricolage Grotesque", sans-serif; font-size: 1.3rem; font-weight: 700; }
+
+/* ---------- Móvil ---------- */
+
+@media (max-width: 52rem) {
+  .hero { grid-template-columns: 1fr; gap: 1rem; padding-top: 1rem; }
+  .rombo-foto { --lado: 9rem; margin: 2rem 0 1rem 2.25rem; grid-row: 1; }
+  .proyecto { grid-template-columns: 1fr; }
+  .doble { grid-template-columns: 1fr; gap: 3rem; }
+  .articulo { grid-template-columns: 1fr; gap: 1rem; }
+  .indice { position: static; }
+  .pie ul { text-align: left; }
 }
 
-footer {
-  margin-top: 4rem;
-  padding-top: 1.25rem;
-  border-top: 1px solid var(--line);
-  font-size: 0.85rem;
-  color: var(--muted);
-}
-
-footer p {
-  margin: 0.2rem 0;
-}
-
-@media (max-width: 30rem) {
-  .intro {
-    grid-template-columns: 1fr;
-  }
-
-  .foto {
-    grid-row: 1;
-    width: 5rem;
-    height: 5rem;
-  }
-
-  dl {
-    grid-template-columns: 1fr;
-    gap: 0.1rem;
-  }
-
-  dd {
-    margin-bottom: 0.6rem;
-  }
+@media (max-width: 34rem) {
+  .nav { flex-direction: column; align-items: flex-start; }
+  .linea-tiempo::before { left: 3.75rem; }
+  .linea-tiempo li { grid-template-columns: 3.75rem 1fr; }
+  .linea-tiempo li::after { left: calc(3.75rem - .3rem); }
+  .linea-tiempo .anio { font-size: 1.05rem; }
+  .barra { grid-template-columns: 1fr 5.5rem; }
+  .barra .etq { grid-column: 1 / -1; }
+  .habilidades { grid-template-columns: 1fr; gap: .1rem; }
+  .habilidades dd { margin-bottom: .7rem; }
 }
 
 @media print {
-  .top,
-  footer {
-    display: none;
-  }
+  .nav, .pie, .indice, .grafica-controles { display: none; }
+  .oscuro { background: none; color: #000; }
 }
+
+/* Estado dentro de las cifras de cabecera (página del TFG) */
+.cifras .estado { font-family: "Bricolage Grotesque", sans-serif; font-size: clamp(1.4rem, 3vw, 1.9rem); font-weight: 700; color: #fff; line-height: 1.45; }
+.cifras .estado::before { width: .8rem; height: .8rem; background: var(--ambar-claro); }

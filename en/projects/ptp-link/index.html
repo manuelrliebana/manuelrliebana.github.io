@@ -1,0 +1,203 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Non-line-of-sight wireless link · Manuel R. Liébana</title>
+  <meta name="description" content="How I recovered, diagnosed and tuned a 2.4 GHz wireless link with no line of sight between two houses.">
+  <meta property="og:title" content="Non-line-of-sight wireless link">
+  <meta property="og:description" content="How I recovered, diagnosed and tuned a 2.4 GHz wireless link with no line of sight between two houses.">
+  <meta property="og:image" content="https://manuelrliebana.github.io/assets/og-image.png">
+  <link rel="alternate" hreflang="es" href="https://manuelrliebana.github.io/proyectos/enlace-ptp/">
+  <link rel="icon" href="../../../assets/favicon.ico" sizes="any">
+  <link rel="icon" href="../../../assets/favicon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="../../../assets/apple-touch-icon.png">
+  <meta name="theme-color" content="#2c3a2a">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600..800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../../../assets/style.css">
+</head>
+<body>
+<a class="salto" href="#contenido">Skip to content</a>
+
+<header class="oscuro">
+  <nav class="nav ancho" aria-label="Main">
+    <a class="logo" href="../../" aria-label="Home"><img src="../../../assets/logo-oscuro.svg" alt="liebana" width="657" height="185"></a>
+    <ul>
+      <li><a href="../../#projects" aria-current="page">Projects</a></li>
+      <li><a href="../../#education">Education</a></li>
+      <li><a href="../../../cv/CV_ManuelLiebana_EN.pdf">CV</a></li>
+      <li><a href="../../../proyectos/enlace-ptp/" lang="es" hreflang="es">Español</a></li>
+    </ul>
+  </nav>
+
+  <div class="cabecera-proyecto ancho">
+    <a class="volver" href="../../#projects">Back to projects</a>
+    <h1>Non-line-of-sight wireless link</h1>
+    <p class="lead">A wireless link between two houses on the same street that had worked for years, until it stopped. I brought it back, used measurements to find the bottleneck and tuned it without replacing any hardware.</p>
+    <ul class="cifras">
+      <li><strong>60 m</strong><span>between antennas, no line of sight</span></li>
+      <li><strong>×4</strong><span>link throughput</span></li>
+      <li><strong>+57 %</strong><span>download speed in the connected house</span></li>
+    </ul>
+  </div>
+</header>
+
+<main id="contenido" class="ancho">
+  <div class="articulo">
+    <nav class="indice" aria-labelledby="t-indice">
+      <h2 id="t-indice">On this page</h2>
+      <ol>
+        <li><a href="#problem">The problem</a></li>
+        <li><a href="#network">The network</a></li>
+        <li><a href="#diagnosis">Diagnosis</a></li>
+        <li><a href="#tuning">Tuning</a></li>
+        <li><a href="#learned">What I learned</a></li>
+      </ol>
+    </nav>
+    <div class="cuerpo">
+
+      <section id="problem">
+        <h2>The problem</h2>
+        <p>The fibre connection is in one house (A) and reaches another house on the same street (B), about 60 metres away, by radio. The antennas have no line of sight: the street curves slightly and the front of house A is set back behind a porch.</p>
+        <p>In summer 2026 the link went down. The cable from the antenna to the router in house B was an indoor cable and the weather had destroyed it. When fixing it, nobody remembered the devices' passwords and both houses had new routers, so everything had to be set up again.</p>
+      </section>
+
+      <section id="network">
+        <h2>The network</h2>
+        <p>Both antennas work in bridge mode and the routers in house B are set up as access points. It's a single network: a phone in house B gets its address from the router in house A, as if it were there.</p>
+
+        <figure class="figura">
+          <svg viewBox="0 0 680 200" role="img" aria-labelledby="t-esquema">
+            <title id="t-esquema">Diagram: router in house A, antenna, radio link of about 60 m with no line of sight, antenna, access point in house B and access point by the pool.</title>
+            <g fill="none" stroke="currentColor" stroke-width="1.5">
+              <rect x="10" y="70" width="110" height="54" rx="6"/>
+              <rect x="170" y="70" width="90" height="54" rx="6"/>
+              <rect x="420" y="70" width="90" height="54" rx="6"/>
+              <rect x="560" y="30" width="110" height="54" rx="6"/>
+              <rect x="560" y="120" width="110" height="54" rx="6"/>
+              <line x1="120" y1="97" x2="170" y2="97"/>
+              <line x1="510" y1="97" x2="535" y2="97"/>
+              <path d="M535 57 V137 M535 57 H560 M535 147 H560"/>
+              <path d="M268 97 Q 340 30 412 97" stroke="#c98a2e" stroke-width="2" stroke-dasharray="5 6"/>
+              <path d="M268 97 Q 340 160 412 97" stroke="#c98a2e" stroke-width="2" stroke-dasharray="5 6" opacity=".55"/>
+            </g>
+            <g fill="currentColor" font-family="Inter, sans-serif" font-size="13" text-anchor="middle">
+              <text x="65" y="93" font-weight="600">Router</text>
+              <text x="65" y="111" opacity=".7">house A, fibre</text>
+              <text x="215" y="93" font-weight="600">Antenna</text>
+              <text x="215" y="111" opacity=".7">access point</text>
+              <text x="465" y="93" font-weight="600">Antenna</text>
+              <text x="465" y="111" opacity=".7">station</text>
+              <text x="615" y="53" font-weight="600">Wi-Fi house B</text>
+              <text x="615" y="71" opacity=".7">2.4 and 5 GHz</text>
+              <text x="615" y="143" font-weight="600">Wi-Fi pool</text>
+              <text x="615" y="161" opacity=".7">summer only</text>
+              <text x="340" y="28" font-weight="600">~60 m, 2.4 GHz</text>
+              <text x="340" y="190" opacity=".7">the signal arrives by reflection</text>
+            </g>
+          </svg>
+          <figcaption>The antennas can't see each other: the signal bounces off the façades.</figcaption>
+        </figure>
+
+        <div class="tabla">
+          <table>
+            <thead><tr><th>Device</th><th>Model</th><th>Role</th></tr></thead>
+            <tbody>
+              <tr><td>Antennas</td><td>2 × Ubiquiti NanoStation Loco M2</td><td>2.4 GHz bridge link, WPA2-AES, airMAX</td></tr>
+              <tr><td>House A</td><td>ISP fibre router</td><td>Internet access and address assignment</td></tr>
+              <tr><td>House B</td><td>ASUS RT-AC51U</td><td>Dual-band access point</td></tr>
+              <tr><td>Cabling</td><td>Outdoor Cat 6 UTP</td><td>Replaces the indoor cable that failed</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <p>Transmit power is 12 dBm. With the antenna's 8 dBi gain that gives 20 dBm of radiated power, exactly the legal limit in Spain for 2.4 GHz. That's why I didn't raise the power to make up for the lack of line of sight.</p>
+      </section>
+
+      <section id="diagnosis">
+        <h2>Diagnosis</h2>
+        <p>With the link working again, house B got about 11 Mbps while house A got over 500. Before changing anything, I measured the speed at every point of the network to see what was holding it back.</p>
+        <div class="tabla">
+          <table>
+            <thead><tr><th>Where I measured</th><th class="num">Download</th><th class="num">Upload</th></tr></thead>
+            <tbody>
+              <tr><td>House A, 5 GHz Wi-Fi</td><td class="num">587 Mbps</td><td class="num">361 Mbps</td></tr>
+              <tr><td>House B, 2.4 GHz Wi-Fi</td><td class="num">11 Mbps</td><td class="num">16 Mbps</td></tr>
+              <tr><td>House B, cable</td><td class="num">11 Mbps</td><td class="num">15 Mbps</td></tr>
+              <tr><td>House B, 5 GHz Wi-Fi</td><td class="num">10 Mbps</td><td class="num">16 Mbps</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <p>In house B it made no difference whether I used a cable or Wi-Fi, so the routers weren't the problem: the radio link was. The antennas' link quality indicator (CCQ) was around 50 %, meaning many packets were lost and had to be resent.</p>
+        <p>Re-aiming the antenna in house B changed nothing. That makes sense: with no line of sight the signal arrives reflected from several directions, not from one. What was left was interference: there are over 20 Wi-Fi networks in the same band around.</p>
+      </section>
+
+      <section id="tuning">
+        <h2>Tuning</h2>
+        <p>The link was on channel 1, which looked like a good choice on paper. I tried channel 6 using airOS test mode, which applies a change for a few minutes and rolls it back unless you confirm it. That way there was no risk of leaving house B offline.</p>
+
+        <figure class="figura grafica" data-max="20" data-canal="6">
+          <div class="grafica-controles" role="group" aria-label="Channel" hidden>
+            <button type="button" data-ver="1" aria-pressed="false">Channel 1, before</button>
+            <button type="button" data-ver="6" aria-pressed="true">Channel 6, after</button>
+          </div>
+          <ul class="barras">
+            <li class="barra" data-c1="11.1" data-c6="18.4"><span class="etq">House A to house B</span><span class="pista"><span class="relleno" style="--v:92%"></span></span><span class="valor">18.4 Mbps</span></li>
+            <li class="barra" data-c1="4.3" data-c6="17"><span class="etq">House B to house A</span><span class="pista"><span class="relleno" style="--v:85%"></span></span><span class="valor">17 Mbps</span></li>
+            <li class="barra" data-c1="4.1" data-c6="18.2"><span class="etq">Both at once</span><span class="pista"><span class="relleno" style="--v:91%"></span></span><span class="valor">18.2 Mbps</span></li>
+          </ul>
+          <figcaption>Link throughput measured between the two antennas. Each value is the average of three tests.</figcaption>
+        </figure>
+
+        <p>The weaker direction went from 4 to 17 Mbps and the link became balanced. On channel 1 the results also jumped a lot from one test to the next; on channel 6 they are stable. Interestingly, channel 6 had more neighbouring networks than channel 1, but weaker ones: channel 1 overlapped with a strong network on channel 2.</p>
+
+        <h3>Day to day</h3>
+        <p>In house B, wired download speed went from 11.3 to 17.7 Mbps on average. I then set the access point's 2.4 GHz Wi-Fi to channel 11 at 20 MHz width, so it wouldn't clash with the antenna right next to it, and Wi-Fi started performing like the cable, with half the latency.</p>
+        <div class="tabla">
+          <table>
+            <thead><tr><th>House B</th><th class="num">Before</th><th class="num">After</th></tr></thead>
+            <tbody>
+              <tr><td>Wired download</td><td class="num">11.3 Mbps</td><td class="num">17.7 Mbps</td></tr>
+              <tr><td>2.4 GHz Wi-Fi download</td><td class="num">12.9 Mbps</td><td class="num">19.5 Mbps</td></tr>
+              <tr><td>2.4 GHz Wi-Fi latency</td><td class="num">89 ms</td><td class="num">27 ms</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <p class="nota">A 2.4 GHz link varies with the interference at any given moment, so these figures are averages of several tests and some runs came out lower.</p>
+      </section>
+
+      <section id="learned">
+        <h2>What I learned</h2>
+        <ul>
+          <li><strong>Measure before changing.</strong> Testing wired and wireless at every point ruled out the routers and pointed at the link, instead of swapping hardware blindly.</li>
+          <li><strong>Test instead of assuming.</strong> The channel survey pointed to channel 1 and channel 6 is the one that worked. What matters isn't how many networks there are, but how strong they are and how they overlap.</li>
+          <li><strong>The cable is part of the link too.</strong> The failure wasn't a radio problem: it was an indoor cable left in the sun and rain. It's now outdoor Cat 6.</li>
+          <li><strong>Write down the credentials.</strong> Not having them meant setting everything up again. They're now saved, and I also took the chance to turn off WPS and leave only WPA2-AES.</li>
+        </ul>
+        <p>A possible next step: moving to 5 GHz equipment, with far less interference, if I can get some line of sight by raising one of the antennas.</p>
+        <p><a href="https://github.com/manuelrliebana/enlace-ptp">Full write-up on GitHub</a> (in Spanish)</p>
+      </section>
+
+      <div class="siguiente">
+        <a href="../../#projects">All projects</a>
+        <a href="../tfg/">Management platform for music ensembles</a>
+      </div>
+    </div>
+  </div>
+</main>
+
+<footer class="pie">
+  <div class="ancho">
+    <h2>Have a role or a project I could fit into?</h2>
+    <ul>
+      <li><a href="mailto:manuelrliebana@gmail.com">manuelrliebana@gmail.com</a></li>
+      <li><a href="https://www.linkedin.com/in/manuelrliebana">LinkedIn</a></li>
+      <li><a href="https://github.com/manuelrliebana">GitHub</a></li>
+    </ul>
+    <p class="firma">Manuel Rafael Liébana Cruz, Jaén, Spain. <a href="https://github.com/manuelrliebana/manuelrliebana.github.io">Source code of this site</a>.</p>
+  </div>
+</footer>
+<script src="../../../assets/grafica.js"></script>
+</body>
+</html>

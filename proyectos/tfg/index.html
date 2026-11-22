@@ -1,0 +1,111 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Gestión de agrupaciones musicales · Manuel R. Liébana</title>
+  <meta name="description" content="Mi Trabajo Fin de Grado: una plataforma para gestionar bandas, coros y orquestas con FastAPI, PostgreSQL y Flutter.">
+  <meta property="og:title" content="Gestión de agrupaciones musicales">
+  <meta property="og:description" content="Mi Trabajo Fin de Grado: una plataforma para gestionar bandas, coros y orquestas con FastAPI, PostgreSQL y Flutter.">
+  <meta property="og:image" content="https://manuelrliebana.github.io/assets/og-image.png">
+  <link rel="alternate" hreflang="en" href="https://manuelrliebana.github.io/en/projects/tfg/">
+  <link rel="icon" href="../../assets/favicon.ico" sizes="any">
+  <link rel="icon" href="../../assets/favicon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="../../assets/apple-touch-icon.png">
+  <meta name="theme-color" content="#2c3a2a">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600..800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../../assets/style.css">
+</head>
+<body>
+<a class="salto" href="#contenido">Ir al contenido</a>
+
+<header class="oscuro">
+  <nav class="nav ancho" aria-label="Principal">
+    <a class="logo" href="../../" aria-label="Inicio"><img src="../../assets/logo-oscuro.svg" alt="liebana" width="657" height="185"></a>
+    <ul>
+      <li><a href="../../#proyectos" aria-current="page">Proyectos</a></li>
+      <li><a href="../../#formacion">Formación</a></li>
+      <li><a href="../../cv/CV_ManuelLiebana_ES.pdf">CV</a></li>
+      <li><a href="../../en/projects/tfg/" lang="en" hreflang="en">English</a></li>
+    </ul>
+  </nav>
+
+    <div class="cabecera-proyecto ancho">
+    <a class="volver" href="../../#proyectos">Volver a proyectos</a>
+    <h1>Gestión de agrupaciones musicales</h1>
+    <p class="lead">
+      Mi Trabajo Fin de Grado: una plataforma para llevar el día a día de bandas, coros y orquestas,
+      hecha desde cero, con un backend en Python y una app en Flutter.
+    </p>
+    <ul class="cifras">
+      <li><strong>2026–27</strong><span>curso de desarrollo</span></li>
+      <li><strong>3 piezas</strong><span>API, base de datos y app</span></li>
+      <li><strong><span class="estado">En desarrollo</span></strong><span>iré publicando avances</span></li>
+    </ul>
+  </div>
+</header>
+
+<main id="contenido" class="ancho">
+  <div class="articulo">
+    <nav class="indice" aria-labelledby="t-indice">
+      <h2 id="t-indice">En esta página</h2>
+      <ol>
+        <li><a href="#por-que">Por qué este proyecto</a></li>
+        <li><a href="#como">Cómo lo construyo</a></li>
+        <li><a href="#plan">Plan de trabajo</a></li>
+      </ol>
+    </nav>
+    <div class="cuerpo">
+      <section id="por-que">
+        <h2>Por qué este proyecto</h2>
+        <p>Toco el clarinete en la Banda Municipal de Jamilena y en el Coro y Orquesta Diocesanos de Jaén. En las agrupaciones musicales mucha de la organización va por mensajes sueltos, hojas de cálculo y memoria. Quiero hacer una herramienta pensada para ellas, partiendo de lo que veo cada semana desde dentro.</p>
+        <p>Lo hago desde cero, sin partir de una plantilla, porque así tengo que tomar y justificar cada decisión de diseño: el modelo de datos, la API y la experiencia en la app.</p>
+      </section>
+      <section id="como">
+        <h2>Cómo lo construyo</h2>
+        <div class="tabla">
+          <table>
+            <thead><tr><th>Parte</th><th>Tecnología</th><th>Para qué</th></tr></thead>
+            <tbody>
+              <tr><td>Backend</td><td>Python con FastAPI</td><td>Una API REST con la lógica de la plataforma</td></tr>
+              <tr><td>Datos</td><td>PostgreSQL</td><td>Una base de datos relacional para agrupaciones, miembros y actividades</td></tr>
+              <tr><td>App</td><td>Flutter</td><td>Una sola base de código para móvil</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <p>Llevo el diario del proyecto, las decisiones y los avances en notas aparte, y los iré trasladando aquí y al repositorio.</p>
+      </section>
+      <section id="plan">
+        <h2>Plan de trabajo</h2>
+        <ol>
+          <li><strong>Análisis.</strong> Qué necesitan las agrupaciones y qué debe hacer la primera versión.</li>
+          <li><strong>Diseño.</strong> Modelo de datos y contrato de la API.</li>
+          <li><strong>Backend.</strong> API con FastAPI sobre PostgreSQL, con pruebas.</li>
+          <li><strong>App.</strong> Cliente en Flutter conectado a la API.</li>
+          <li><strong>Pruebas y memoria.</strong> Validación con uso real y redacción del TFG.</li>
+        </ol>
+        <p class="nota">Esta página se irá completando según avance el proyecto, con capturas, decisiones de diseño y enlaces al código.</p>
+      </section>
+      <div class="siguiente">
+        <a href="../enlace-ptp/">Radioenlace sin visión directa</a>
+        <a href="../esta-web/">Esta web y mi CV</a>
+      </div>
+    </div>
+  </div>
+</main>
+
+<footer class="pie">
+  <div class="ancho">
+    <h2>¿Tienes un puesto o un proyecto en el que encaje?</h2>
+    <ul>
+      <li><a href="mailto:manuelrliebana@gmail.com">manuelrliebana@gmail.com</a></li>
+      <li><a href="https://www.linkedin.com/in/manuelrliebana">LinkedIn</a></li>
+      <li><a href="https://github.com/manuelrliebana">GitHub</a></li>
+    </ul>
+    <p class="firma">Manuel Rafael Liébana Cruz, Jaén. <a href="https://github.com/manuelrliebana/manuelrliebana.github.io">Código de esta web</a>.</p>
+  </div>
+</footer>
+</body>
+</html>

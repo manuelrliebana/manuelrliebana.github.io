@@ -1,0 +1,100 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>This website and my CV · Manuel R. Liébana</title>
+  <meta name="description" content="How my personal website is built: hand-written HTML and CSS, my own personal brand, and a Typst CV built in two languages.">
+  <meta property="og:title" content="This website and my CV">
+  <meta property="og:description" content="How my personal website is built: hand-written HTML and CSS, my own personal brand, and a Typst CV built in two languages.">
+  <meta property="og:image" content="https://manuelrliebana.github.io/assets/og-image.png">
+  <link rel="alternate" hreflang="es" href="https://manuelrliebana.github.io/proyectos/esta-web/">
+  <link rel="icon" href="../../../assets/favicon.ico" sizes="any">
+  <link rel="icon" href="../../../assets/favicon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="../../../assets/apple-touch-icon.png">
+  <meta name="theme-color" content="#2c3a2a">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600..800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../../../assets/style.css">
+</head>
+<body>
+<a class="salto" href="#contenido">Skip to content</a>
+
+<header class="oscuro">
+  <nav class="nav ancho" aria-label="Main">
+    <a class="logo" href="../../" aria-label="Home"><img src="../../../assets/logo-oscuro.svg" alt="liebana" width="657" height="185"></a>
+    <ul>
+      <li><a href="../../#projects" aria-current="page">Projects</a></li>
+      <li><a href="../../#education">Education</a></li>
+      <li><a href="../../../cv/CV_ManuelLiebana_EN.pdf">CV</a></li>
+      <li><a href="../../../proyectos/esta-web/" lang="es" hreflang="es">Español</a></li>
+    </ul>
+  </nav>
+
+  <div class="cabecera-proyecto ancho">
+    <a class="volver" href="../../#projects">Back to projects</a>
+    <h1>This website and my CV</h1>
+    <p class="lead">A hand-written personal website and a CV built in Spanish and English from a single source file. Both use my personal brand and live in the same repository.</p>
+    <ul class="cifras">
+      <li><strong>0</strong><span>frameworks</span></li>
+      <li><strong>1 file</strong><span>for the CV in two languages</span></li>
+      <li><strong>2 modes</strong><span>light and dark, following your system</span></li>
+    </ul>
+  </div>
+</header>
+
+<main id="contenido" class="ancho">
+  <div class="articulo">
+    <nav class="indice" aria-labelledby="t-indice">
+      <h2 id="t-indice">On this page</h2>
+      <ol>
+        <li><a href="#site">The website</a></li>
+        <li><a href="#brand">The brand</a></li>
+        <li><a href="#cv">The CV in Typst</a></li>
+      </ol>
+    </nav>
+    <div class="cuerpo">
+
+      <section id="site">
+        <h2>The website</h2>
+        <p>Hand-written HTML and CSS, no frameworks, published with GitHub Pages. The only JavaScript is the wireless link chart, and the page reads just as well without it.</p>
+        <ul>
+          <li>Spanish and English as static pages linked to each other.</li>
+          <li>Automatic light and dark mode based on your system settings.</li>
+          <li>Keyboard accessible with a visible focus, and it respects reduced motion settings.</li>
+          <li>Adapts from phones to large screens with a single stylesheet.</li>
+        </ul>
+      </section>
+      <section id="brand">
+        <h2>The brand</h2>
+        <p>I designed my own logo: "liebana" in Bricolage Grotesque with a tilted diamond over the e. The diamond is the only coloured element, in amber, and here it also frames my photo and marks the points on the timeline.</p>
+        <p>The colours come from Jamilena, my home town: olive-grove green for the dark blocks and whitewash white for the background.</p>
+      </section>
+      <section id="cv">
+        <h2>The CV in Typst</h2>
+        <p>I write my CV in <a href="https://typst.app">Typst</a>, a code-based typesetting system. A single file builds the Spanish and English versions depending on the language I pass in, with the same fonts and colours as the website.</p>
+        <p>Every time I change the CV, a GitHub Action builds it to check for errors and saves the PDFs.</p>
+        <p><a href="https://github.com/manuelrliebana/manuelrliebana.github.io">See the code for the website and CV</a></p>
+      </section>
+      <div class="siguiente">
+        <a href="../tfg/">Management platform for music ensembles</a>
+        <a href="../ptp-link/">Non-line-of-sight wireless link</a>
+      </div>
+    </div>
+  </div>
+</main>
+
+<footer class="pie">
+  <div class="ancho">
+    <h2>Have a role or a project I could fit into?</h2>
+    <ul>
+      <li><a href="mailto:manuelrliebana@gmail.com">manuelrliebana@gmail.com</a></li>
+      <li><a href="https://www.linkedin.com/in/manuelrliebana">LinkedIn</a></li>
+      <li><a href="https://github.com/manuelrliebana">GitHub</a></li>
+    </ul>
+    <p class="firma">Manuel Rafael Liébana Cruz, Jaén, Spain. <a href="https://github.com/manuelrliebana/manuelrliebana.github.io">Source code of this site</a>.</p>
+  </div>
+</footer>
+</body>
+</html>

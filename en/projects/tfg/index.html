@@ -1,0 +1,109 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Management platform for music ensembles · Manuel R. Liébana</title>
+  <meta name="description" content="My final-year project: a platform for running bands, choirs and orchestras, built with FastAPI, PostgreSQL and Flutter.">
+  <meta property="og:title" content="Management platform for music ensembles">
+  <meta property="og:description" content="My final-year project: a platform for running bands, choirs and orchestras, built with FastAPI, PostgreSQL and Flutter.">
+  <meta property="og:image" content="https://manuelrliebana.github.io/assets/og-image.png">
+  <link rel="alternate" hreflang="es" href="https://manuelrliebana.github.io/proyectos/tfg/">
+  <link rel="icon" href="../../../assets/favicon.ico" sizes="any">
+  <link rel="icon" href="../../../assets/favicon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="../../../assets/apple-touch-icon.png">
+  <meta name="theme-color" content="#2c3a2a">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600..800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../../../assets/style.css">
+</head>
+<body>
+<a class="salto" href="#contenido">Skip to content</a>
+
+<header class="oscuro">
+  <nav class="nav ancho" aria-label="Main">
+    <a class="logo" href="../../" aria-label="Home"><img src="../../../assets/logo-oscuro.svg" alt="liebana" width="657" height="185"></a>
+    <ul>
+      <li><a href="../../#projects" aria-current="page">Projects</a></li>
+      <li><a href="../../#education">Education</a></li>
+      <li><a href="../../../cv/CV_ManuelLiebana_EN.pdf">CV</a></li>
+      <li><a href="../../../proyectos/tfg/" lang="es" hreflang="es">Español</a></li>
+    </ul>
+  </nav>
+
+  <div class="cabecera-proyecto ancho">
+    <a class="volver" href="../../#projects">Back to projects</a>
+    <h1>Management platform for music ensembles</h1>
+    <p class="lead">My final-year project: a platform for the day-to-day running of bands, choirs and orchestras, built from scratch with a Python backend and a Flutter app.</p>
+    <ul class="cifras">
+      <li><strong>2026–27</strong><span>development year</span></li>
+      <li><strong>3 parts</strong><span>API, database and app</span></li>
+      <li><strong><span class="estado">In progress</span></strong><span>I'll publish updates here</span></li>
+    </ul>
+  </div>
+</header>
+
+<main id="contenido" class="ancho">
+  <div class="articulo">
+    <nav class="indice" aria-labelledby="t-indice">
+      <h2 id="t-indice">On this page</h2>
+      <ol>
+        <li><a href="#why">Why this project</a></li>
+        <li><a href="#how">How I'm building it</a></li>
+        <li><a href="#plan">Work plan</a></li>
+      </ol>
+    </nav>
+    <div class="cuerpo">
+
+      <section id="why">
+        <h2>Why this project</h2>
+        <p>I play the clarinet in my town's municipal band and in the Diocesan Choir and Orchestra of Jaén. In music ensembles a lot of the organising runs on scattered messages, spreadsheets and memory. I want to build a tool designed for them, based on what I see every week from the inside.</p>
+        <p>I'm building it from scratch, without a template, so I have to make and justify every design decision: the data model, the API and the app experience.</p>
+      </section>
+      <section id="how">
+        <h2>How I'm building it</h2>
+        <div class="tabla">
+          <table>
+            <thead><tr><th>Part</th><th>Technology</th><th>Purpose</th></tr></thead>
+            <tbody>
+              <tr><td>Backend</td><td>Python with FastAPI</td><td>A REST API with the platform's logic</td></tr>
+              <tr><td>Data</td><td>PostgreSQL</td><td>A relational database for ensembles, members and activities</td></tr>
+              <tr><td>App</td><td>Flutter</td><td>A single codebase for mobile</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <p>I keep a project log with decisions and progress, and I'll be moving it here and to the repository.</p>
+      </section>
+      <section id="plan">
+        <h2>Work plan</h2>
+        <ol>
+          <li><strong>Analysis.</strong> What ensembles need and what the first version should do.</li>
+          <li><strong>Design.</strong> Data model and API contract.</li>
+          <li><strong>Backend.</strong> FastAPI API on PostgreSQL, with tests.</li>
+          <li><strong>App.</strong> Flutter client connected to the API.</li>
+          <li><strong>Testing and report.</strong> Validation with real use and writing up the project.</li>
+        </ol>
+        <p class="nota">This page will grow as the project moves forward, with screenshots, design decisions and links to the code.</p>
+      </section>
+      <div class="siguiente">
+        <a href="../ptp-link/">Non-line-of-sight wireless link</a>
+        <a href="../this-website/">This website and my CV</a>
+      </div>
+    </div>
+  </div>
+</main>
+
+<footer class="pie">
+  <div class="ancho">
+    <h2>Have a role or a project I could fit into?</h2>
+    <ul>
+      <li><a href="mailto:manuelrliebana@gmail.com">manuelrliebana@gmail.com</a></li>
+      <li><a href="https://www.linkedin.com/in/manuelrliebana">LinkedIn</a></li>
+      <li><a href="https://github.com/manuelrliebana">GitHub</a></li>
+    </ul>
+    <p class="firma">Manuel Rafael Liébana Cruz, Jaén, Spain. <a href="https://github.com/manuelrliebana/manuelrliebana.github.io">Source code of this site</a>.</p>
+  </div>
+</footer>
+</body>
+</html>
