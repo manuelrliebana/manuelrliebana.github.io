@@ -420,3 +420,6 @@ td.num, th.num { text-align: right; font-variant-numeric: tabular-nums; }
 /* Estado dentro de las cifras de cabecera (página del TFG) */
 .cifras .estado { font-family: "Bricolage Grotesque", sans-serif; font-size: clamp(1.4rem, 3vw, 1.9rem); font-weight: 700; color: #fff; line-height: 1.45; }
 .cifras .estado::before { width: .8rem; height: .8rem; background: var(--ambar-claro); }
+
+/* Capturas reales dentro de las páginas de proyecto */
+.captura img { width: 100%; height: auto; border-radius: 4px; border: 1px solid var(--linea); }
